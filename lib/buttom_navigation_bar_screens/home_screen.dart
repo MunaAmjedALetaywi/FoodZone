@@ -207,25 +207,25 @@ Map<String, dynamic> homeTopRatedDate={
     {
       'id': 1,
       'title':'Lorem ipsum dolor 1',
-      'itemPrice': '20 EGP',
+      'itemPrice': '20 JOD',
       'image_url': 'https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcGYtczg3LW1uLTI1LTAxLnBuZw.png?s=oKp6HzXr641NDT5CYgD0K_kDgZAvDOdSPYweV18ihGo'
     },
     {
       'id': 2,
       'title':'Lorem ipsum dolor 2',
-      'itemPrice': '15 EGP',
+      'itemPrice': '15 JOD',
       'image_url': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRftZVukcnrPxwBMP-DkDxZ6_B6E_P08GKn3Q&usqp=CAU'
     },
     {
       'id': 3,
       'title':'Lorem ipsum dolor 3',
-      'itemPrice': '10 EGP',
+      'itemPrice': '10 JOD',
       'image_url': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmqB8XcoHkXjQj3Dg-hUZEFSrdxsSloHaMBg&usqp=CAU'
     },
     {
       'id': 4,
       'title':'Lorem ipsum dolor 4',
-      'itemPrice': '5 EGP',
+      'itemPrice': '5 JOD',
       'image_url': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRln7UCQ6eQtrC22xevgI1zhMjzQpl6xDK1Yw&usqp=CAU'
     }
   ]
@@ -237,25 +237,25 @@ Map<String, dynamic> homeNearToYouData = {
     {
       'id': 1,
       'title':'Near to you 1',
-      'itemPrice': '20 EGP',
+      'itemPrice': '20 JOD',
       'image_url': 'https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcGYtczg3LW1uLTI1LTAxLnBuZw.png?s=oKp6HzXr641NDT5CYgD0K_kDgZAvDOdSPYweV18ihGo'
     },
     {
       'id': 2,
       'title':'Near to you 2',
-      'itemPrice': '15 EGP',
+      'itemPrice': '15 JOD',
       'image_url': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRftZVukcnrPxwBMP-DkDxZ6_B6E_P08GKn3Q&usqp=CAU'
     },
     {
       'id': 3,
       'title':'Near to you 3',
-      'itemPrice': '10 EGP',
+      'itemPrice': '10 JOD',
       'image_url': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmqB8XcoHkXjQj3Dg-hUZEFSrdxsSloHaMBg&usqp=CAU'
     },
     {
       'id': 4,
       'title':'Near to you 4',
-      'itemPrice': '5 EGP',
+      'itemPrice': '5 JOD',
       'image_url': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRln7UCQ6eQtrC22xevgI1zhMjzQpl6xDK1Yw&usqp=CAU'
     }
   ]
