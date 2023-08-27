@@ -12,6 +12,7 @@ class SpecialScreen extends StatefulWidget {
 
 class _SpecialScreenState extends State<SpecialScreen> {
 
+  @override
   void initState(){
     super.initState();
     Provider.of<SpecialOffersController>(context, listen:false).getData();
@@ -19,35 +20,53 @@ class _SpecialScreenState extends State<SpecialScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Consumer<SpecialOffersController>(
-        builder: (BuildContext context,provider,Widget? child) {
-          if (provider.isLoading) {
-            return Center(child: CircularProgressIndicator());
-          }
-          return ListView.separated(
-            padding: EdgeInsets.symmetric(vertical: 16),
-            itemCount: provider.specialOffersDataList?.length ?? 0,
-            itemBuilder: (BuildContext context, int index) {
-              return SpecialOffersItem(
-                imageURL: provider.specialOffersDataList?[index].imageURL,
-                per: provider.specialOffersDataList?[index].per,
-                des: provider.specialOffersDataList?[index].des,
-                colors: [Color(0xFF000000), Color(0xFFB31312)],
-                onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (BuildContext context) {
-                        return SpecialScreen();
-                      }));
-                },
-              );
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: const Text(
+            'Special Offers',
+            style: TextStyle(
+                color: Colors.black
+            ),
+          ),
+          elevation: 0,
+          iconTheme: const IconThemeData(color: Color(0xFF9B1A19)),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: (){
+              Navigator.of(context).pop();
             },
-            separatorBuilder: (BuildContext context, int index) {
-              return SizedBox(
-                height: 16,
-              );
-            },
-          );
-        },
-      ));
+          ),
+        ),
+        body: Consumer<SpecialOffersController>(
+          builder: (BuildContext context, provider, Widget? child) {
+            if (provider.isLoading) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            return ListView.separated(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              itemCount: provider.specialOffersDataList?.length ?? 0,
+              itemBuilder: (BuildContext context, int index) {
+                return SpecialOffersItem(
+                  imageURL:
+                  provider.specialOffersDataList?[index].imageURL,
+                  per: provider.specialOffersDataList?[index].per,
+                  des: provider.specialOffersDataList?[index].des,
+                  colors: [const Color(0xff000000), const Color(0xFFB31312)],
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return const SpecialScreen();
+                        }));
+                  },
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return const SizedBox(
+                  height: 16,
+                );
+              },
+            );
+          },
+        ));
   }
 }

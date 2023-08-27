@@ -1,6 +1,7 @@
 import 'package:app_zone/Splash/content_model.dart';
 import 'package:app_zone/buttom_navigation_bar_screens/buttom_navigation_bar_screens.dart';
 import 'package:app_zone/helpers/sp_helper.dart';
+import 'package:app_zone/register/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class Onbording extends StatefulWidget {
@@ -47,7 +48,7 @@ class _OnbordingState extends State<Onbording> {
                   itemBuilder: (_,i){
                     return Column(
                       children: [
-                        Padding(padding: EdgeInsets.only(top: 100)),
+                        const Padding(padding: EdgeInsets.only(top: 100)),
                         Image.asset(
                           contents[i].image,
                           height: 300,
@@ -82,7 +83,7 @@ class _OnbordingState extends State<Onbording> {
             ),
             Container(
               height: 60,
-              margin: EdgeInsets.fromLTRB(20, 40, 10, 40),
+              margin: const EdgeInsets.fromLTRB(20, 40, 10, 40),
               alignment: Alignment.centerRight,
               width: double.infinity,
               child: Row(
@@ -119,16 +120,16 @@ class _OnbordingState extends State<Onbording> {
                           setState(() {
                             currentIndex++;
                             _pageController.nextPage(
-                              duration: Duration(microseconds: 300),
+                              duration: const Duration(microseconds: 300),
                               curve: Curves.ease,
                             );
                           });
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Color(0xFF9B1A19),
+                        primary: const Color(0xFF9B1A19),
                         shape: const CircleBorder(),
-                        padding: EdgeInsets.all(22),
+                        padding: const EdgeInsets.all(22),
                       ),
                       child: Image.asset(
                         'assets/images/img.png',
@@ -155,18 +156,19 @@ class _OnbordingState extends State<Onbording> {
     Navigator.of(context)
         .pushReplacement(MaterialPageRoute(
         builder: (BuildContext context) {
-          return ButtomNavigationScreen();
+          return const WelcomeScreen();
         }),
     );
   }
+
   Container buildDot(int index ,BuildContext context) {
     return Container(
       height: 10,
       width: currentIndex == index ? 46:8,
-      margin: EdgeInsets.only(right: 5),
+      margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
-        color: Color(0xFF9B1A19),
+        color: const Color(0xFF9B1A19),
       ),
     );
   }

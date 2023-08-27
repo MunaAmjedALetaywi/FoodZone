@@ -166,12 +166,15 @@ class HomeScreen extends StatelessWidget {
             SpecialOffersItem(
               imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRln7UCQ6eQtrC22xevgI1zhMjzQpl6xDK1Yw&usqp=CAU',
               per: 50,
-              des: 'test',
+              des: 'Special Offers',
               colors: const [Color(0xff000000), Color(0xFFFF2F08)],
               onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                  return const SpecialScreen();
-                },));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (BuildContext context){
+                      return const SpecialScreen();
+                      },
+                    )
+                );
               },
             ),
             const SizedBox(
@@ -218,9 +221,9 @@ Map<String, dynamic> homeTopRatedDate={
     },
     {
       'id': 3,
-      'title':'Lorem ipsum dolor 3',
-      'itemPrice': '10 JOD',
-      'image_url': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmqB8XcoHkXjQj3Dg-hUZEFSrdxsSloHaMBg&usqp=CAU'
+      'title':'Pepsi',
+      'itemPrice': '0.50 JOD',
+      'image_url': 'https://w7.pngwing.com/pngs/153/255/png-transparent-pepsi-max-fizzy-drinks-pepsi-blue-sprite-pepsi-cola-electric-blue-pepsico.png'
     },
     {
       'id': 4,
@@ -236,27 +239,27 @@ Map<String, dynamic> homeNearToYouData = {
   'items' : [
     {
       'id': 1,
-      'title':'Near to you 1',
+      'title':'Classic Chicken Burger',
       'itemPrice': '20 JOD',
-      'image_url': 'https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcGYtczg3LW1uLTI1LTAxLnBuZw.png?s=oKp6HzXr641NDT5CYgD0K_kDgZAvDOdSPYweV18ihGo'
+      'image_url': 'https://www.pngplay.com/wp-content/uploads/15/Classic-Chicken-Burger-Transparent-Images.png'
     },
     {
       'id': 2,
-      'title':'Near to you 2',
+      'title':'Fish Burger',
       'itemPrice': '15 JOD',
-      'image_url': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRftZVukcnrPxwBMP-DkDxZ6_B6E_P08GKn3Q&usqp=CAU'
+      'image_url': 'https://w7.pngwing.com/pngs/889/296/png-transparent-veggie-burger-hamburger-fast-food-breakfast-sandwich-hot-dog-fish-burger-thumbnail.png'
     },
     {
       'id': 3,
-      'title':'Near to you 3',
+      'title':'Cheese burger',
       'itemPrice': '10 JOD',
-      'image_url': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmqB8XcoHkXjQj3Dg-hUZEFSrdxsSloHaMBg&usqp=CAU'
+      'image_url': 'https://p1.hiclipart.com/preview/249/784/968/burger-cheese-burger-png-clipart.jpg'
     },
     {
       'id': 4,
-      'title':'Near to you 4',
+      'title':'Big Burger',
       'itemPrice': '5 JOD',
-      'image_url': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRln7UCQ6eQtrC22xevgI1zhMjzQpl6xDK1Yw&usqp=CAU'
+      'image_url': 'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c1a8.png'
     }
   ]
 };

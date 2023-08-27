@@ -9,13 +9,13 @@ class DotIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(microseconds: 300),
+      duration: const Duration(microseconds: 300),
       height: 10,
       width: isActive ? 46:8,
-      margin: EdgeInsets.only(right: 5),
+      margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
-        color: Color(0xFF9B1A19),
+        color: const Color(0xFF9B1A19),
       ),
     );
   }

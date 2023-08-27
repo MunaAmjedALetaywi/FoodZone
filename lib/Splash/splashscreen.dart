@@ -1,6 +1,7 @@
 import 'dart:async';
-import 'package:app_zone/homescreen.dart';
+import 'package:app_zone/Splash/onbording.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,12 +15,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState(){
     super.initState();
-    Timer(Duration(seconds:5),() {
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-              builder: (context) => HomeScreen()));
-    });
+    Timer(
+        const Duration(seconds:5),() {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const Onbording()
+            ),
+          );
+        }
+    );
   }
 
   @override
@@ -45,7 +50,9 @@ class _SplashScreenState extends State<SplashScreen> {
                     ..strokeWidth = 15
                     ..color = Colors.black,
                 ),
-              ),
+              ).animate()
+            .fade(duration: 500.ms)
+            .scale(delay: 500.ms),
               // Solid text as fill.
               const Text(
                 'Food Zone',
@@ -53,7 +60,9 @@ class _SplashScreenState extends State<SplashScreen> {
                   fontSize: 50,
                   color: Color(0xFFB31312),
                 ),
-              ),
+              ).animate()
+                  .fade(duration: 500.ms)
+                  .scale(delay: 500.ms)
             ],
           ),
         ),

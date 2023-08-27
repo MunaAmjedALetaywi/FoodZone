@@ -1,36 +1,47 @@
 import 'package:flutter/material.dart';
 
-class HomeItem extends StatelessWidget {
+class HomeItem extends StatefulWidget {
   const HomeItem({
-    super.key,
+    Key? key,
     required this.imageURL,
     required this.title,
     required this.onTap,
     required this.itemPrice,
-    //required this.fav
-  });
+  }) : super(key: key);
 
-  //final String fav;
   final String imageURL;
   final String title;
   final VoidCallback onTap;
   final String itemPrice;
+
+  @override
+  _HomeItemState createState() => _HomeItemState();
+}
+
+class _HomeItemState extends State<HomeItem> {
+  bool isFavorite = false;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        setState(() {
+          isFavorite = !isFavorite;
+        });
+        widget.onTap();
+      },
       child: Container(
         width: 124,
         decoration: BoxDecoration(
           color: const Color(0xFFFF2F08).withOpacity(0.05),
-          borderRadius: const BorderRadius.all(Radius.circular(12))
+          borderRadius: const BorderRadius.all(Radius.circular(12)),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.network(
-              imageURL,
+              widget.imageURL,
               width: 70,
               height: 70,
             ),
@@ -38,16 +49,15 @@ class HomeItem extends StatelessWidget {
               height: 3,
             ),
             Text(
-              title,
+              widget.title,
               style: const TextStyle(
                 fontSize: 9,
-                fontWeight: FontWeight.w500
+                fontWeight: FontWeight.w500,
               ),
             ),
             const SizedBox(
               height: 9,
             ),
-
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               height: 21,
@@ -57,7 +67,7 @@ class HomeItem extends StatelessWidget {
                   Align(
                     alignment: Alignment.bottomLeft,
                     child: Text(
-                      itemPrice,
+                      widget.itemPrice,
                       style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
@@ -65,10 +75,12 @@ class HomeItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Align(
+                  Align(
                     alignment: Alignment.bottomRight,
                     child: Icon(
-                      Icons.favorite_border_rounded,
+                      isFavorite
+                          ? Icons.favorite // Change to filled heart icon when favorite
+                          : Icons.favorite_border_rounded, // Outline heart icon when not favorite
                       color: Color(0xFF9B1A19),
                     ),
                   ),

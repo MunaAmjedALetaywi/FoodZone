@@ -1,3 +1,4 @@
+import 'package:app_zone/buttom_navigation_bar_screens/cart_screen.dart';
 import 'package:app_zone/buttom_navigation_bar_screens/favorites_screen.dart';
 import 'package:app_zone/buttom_navigation_bar_screens/home_screen.dart';
 import 'package:app_zone/buttom_navigation_bar_screens/profile_screen.dart';
@@ -93,10 +94,15 @@ class _ButtomNavigationScreenState extends State<ButtomNavigationScreen> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50),
         ),
-        onPressed: () {},
-        child: SvgPicture.asset(
-          'assets/images/shopping-basket.svg',
-          fit: BoxFit.scaleDown,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CartScreen()),
+          );
+        },
+        child: const Icon(
+          Icons.shopping_cart_rounded,
+          color: Colors.white,
         ),
       ),
       floatingActionButtonLocation:
